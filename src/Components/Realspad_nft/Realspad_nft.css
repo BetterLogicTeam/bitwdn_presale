@@ -1,0 +1,10 @@
+.nft_para {
+    /* color: ; */
+    font-size: 16px;
+    font-family: "Rajdhani", sans-serif;
+}
+
+.hw_lis {
+    list-style: disc;
+    margin: 5px 0px;
+}

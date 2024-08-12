@@ -1,0 +1,117 @@
+.main_real_spad_rod {
+    padding: 40px 10px ;
+}
+
+.road_box {
+    background-color: #002D63;
+padding: 20px;
+border-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.road_box p {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+.line {
+    width: 100% !important;
+    background-color: white;
+    margin: 4rem 0 2rem 0;
+    position: relative;
+    height: 2px ;
+}
+
+.circlw_road {
+    position: absolute;
+    background-color:#002D63 ;
+    padding: 20px;
+    border-radius: 50%;
+    left: 15%;
+    top: -20px;
+}
+.circlw_road4 {
+    position: absolute;
+    background-color:#002D63 ;
+    padding: 20px;
+    border-radius: 50%;
+    right: 15%;
+    top: -20px;
+}
+.circlw_road2 {
+    position: absolute;
+    background-color:#002D63 ;
+    padding: 20px;
+    border-radius: 50%;
+    left: 48%;
+    top: -20px;
+}
+.circlw_road1{
+    position: absolute;
+    background-color:#002D63 ;
+    padding: 20px;
+    border-radius: 50%;
+    left: 25%;
+    top: -20px;
+}
+.circlw_road3{
+    position: absolute;
+    background-color:#002D63 ;
+    padding: 20px;
+    border-radius: 50%;
+    left: 73%;
+    top: -20px;
+}
+
+
+.circlw_road::before{
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 69px;
+    border-left: 1px dashed rgba(255, 255, 255, 0.5);
+}
+.circlw_road4::before{
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 69px;
+    border-left: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+.last_row{
+    margin-top: 4.4rem;
+}
+.circlw_road2::before{
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 69px;
+    border-left: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+
+
+
+.circlw_road1::after{
+    position: absolute;
+    content: "";
+    width: 1px;
+    top: -28px;
+    height: 48px;
+    
+    border-left: 1px dashed rgba(255, 255, 255, 0.5);
+}
+.circlw_road3::after{
+    position: absolute;
+    content: "";
+    width: 1px;
+    top: -28px;
+    height: 48px;
+    
+    border-left: 1px dashed rgba(255, 255, 255, 0.5);
+}
+.road_ma {
+    margin: 3.3rem 0;
+}
