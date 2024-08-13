@@ -300,7 +300,7 @@ export default function Tab_page({Claimable}) {
   return (
     <div className="ab_main">
       <div className="first_Box_stking d-flex gap-2">
-        <div className="d-flex gap-3">
+        <div className="d-flex gap-1 gap-md-3">
           <div
             className=" bnb_Text text-black"
             style={{ backgroundColor: plan == 0 ? "white" : "" }}

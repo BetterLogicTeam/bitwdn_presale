@@ -51,26 +51,26 @@ export default function Landing_page({ setRaise }) {
 
   const referralClaimabletoken = async (value) => {
     try {
-     
-        setclaimSpinner(true);
 
-        const { request } = await prepareWriteContract({
-          address: referal_Contract_Address,
-          abi: referal_Contract_Address_Contract_ABI,
-          functionName: "claimReferalIncome",
-          args: [],
-          account: address,
-        });
-        const { hash } = await writeContract(request);
-        const data = await waitForTransaction({
-          hash,
-        });
+      setclaimSpinner(true);
 
-        setTimeout(() => {
-          setclaimSpinner(false);
-          toast.success("Transaction Completed");
-        }, 4000);
-      
+      const { request } = await prepareWriteContract({
+        address: referal_Contract_Address,
+        abi: referal_Contract_Address_Contract_ABI,
+        functionName: "claimReferalIncome",
+        args: [],
+        account: address,
+      });
+      const { hash } = await writeContract(request);
+      const data = await waitForTransaction({
+        hash,
+      });
+
+      setTimeout(() => {
+        setclaimSpinner(false);
+        toast.success("Transaction Completed");
+      }, 4000);
+
 
     } catch (error) {
       console.log(error);
@@ -264,7 +264,7 @@ export default function Landing_page({ setRaise }) {
       // let referralClaimable = await ContractOfreferal.methods.checkref(address).call();
       // referralClaimable = webSupply.utils.fromWei(referralClaimable.toString());
       // console.log("referralClaimable",referralClaimable);
-      let referralClaimable 
+      let referralClaimable
 
       if (referralClaimable > 0) {
         setreferralClaimable(referralClaimable);
@@ -312,8 +312,7 @@ export default function Landing_page({ setRaise }) {
     <div className="main_div_landing">
       <div className="main_landing">
         <div className="container">
-          <div className="row justify-content-center">
-            <div className="row">
+        <div className="row align-items-center">
               <div className="col-lg-6 ">
                 <div className="main_div_Text">
                   <h5 className="text-left">
@@ -323,43 +322,10 @@ export default function Landing_page({ setRaise }) {
                       </p>
                     </span>
                   </h5>
-                  <h3>
-                     <em>“Building a best future for </em>
-                      <em>your Investments..,”</em>
-                  </h3>
-                  <h3>
-                     <em>“Building a best future for </em>
-                      <em>your Investments..,”</em>
-                  </h3>
-                  <h3>
-                     <em>“Building a best future for </em>
-                      <em>your Investments..,”</em>
-                  </h3>
-                  <h3>
-                     <em>“Building a best future for </em>
-                      <em>your Investments..,”</em>
-                  </h3>
-                  <h3>
-                     <em>“Building a best future for </em>
-                      <em>your Investments..,”</em>
-                  </h3>
-                  <h3>
-                     <em>“Building a best future for </em>
-                      <em>your Investments..,”</em>
-                  </h3>
-                  <h3>
-                     <em>“Building a best future for </em>
-                      <em>your Investments..,”</em>
-                  </h3>
-                  <h3>
-                     <em>“Building a best future for </em>
-                      <em>your Investments..,”</em>
-                  </h3>
-                  <h3>
-                     <em>“Building a best future for </em>
-                      <em>your Investments..,”</em>
-                  </h3>
-                </div>
+                  <h4>
+                    Welcome to BitWDN, a cutting-edge platform designed to integrate the best of decentralized finance (DeFi), digital collectibles, and immersive gaming experiences. Our project combines a decentralized exchange (DEX), a unique NFT collection, a secure wallet, and an engaging Web3 game to offer a comprehensive and innovative blockchain ecosystem
+
+                  </h4>                </div>
               </div>
               <div className="col-lg-6 flex justify-content-end">
                 <div className="col-md-12 this_ha">
@@ -384,9 +350,8 @@ export default function Landing_page({ setRaise }) {
                       <div
                         className="inner_pro"
                         style={{
-                          width: `${
-                            ((Number(124545454)+Number(get_tokeSold))/Number(get_maxTokeninPresale))*100
-                          }%`,
+                          width: `${((Number(124545454) + Number(get_tokeSold)) / Number(get_maxTokeninPresale)) * 100
+                            }%`,
                         }}
                       ></div>
                       {/* <div className="inner_pro" style={{
@@ -447,11 +412,13 @@ export default function Landing_page({ setRaise }) {
                 </div>
               </div>
             </div>
+        
+           
 
-  
 
-            <div className="row">
-              <div className="col-lg-2"></div>
+
+            <div className="row justify-content-center">
+              
               <div className="col-lg-8">
                 <div className="black_box resvers mt-4">
                   <h2 className="" style={{ textAlign: "left" }}>
@@ -475,19 +442,19 @@ export default function Landing_page({ setRaise }) {
                   </div>
 
                   <h2 className="mt-2" style={{ textAlign: "left" }}>
-                  Earn 10% for each referral
+                    Earn 10% for each referral
                   </h2>
                   {/* <h2 className="mt-2" style={{ textAlign: "left" }}>
                   Your Referral Claimable Rewards : {parseFloat(referralClaimable).toFixed(4)} bitwdn Token
                   </h2> */}
 
                   <button className="buy_BTN" onClick={referralClaimabletoken}>
-          {claimSpinner ? "Loading..." : "Claim Refferal Rewards"}
-        </button>
+                    {claimSpinner ? "Loading..." : "Claim Refferal Rewards"}
+                  </button>
                 </div>
               </div>
-              <div className="col-lg-2"></div>
-            </div>
+              
+            
           </div>
         </div>
       </div>

@@ -134,10 +134,11 @@
         padding: 8px;
         border-radius: 15px;
         margin-left: 0rem;
-        width: 115px !important;
+        width: 90px !important;
         display: flex;
         align-items: center ;
     }
+   
 
     .bnb_Text img {
         width: 35%;

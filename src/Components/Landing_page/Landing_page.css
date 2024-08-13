@@ -134,4 +134,10 @@
         font-size: 20px;
         font-family: 'Inter', sans-serif;
     }
+    .main_landing{
+        padding: 10px 0px;
+    }
+    .landing_box{
+        padding: 20px 10px ;
+    }
 }
