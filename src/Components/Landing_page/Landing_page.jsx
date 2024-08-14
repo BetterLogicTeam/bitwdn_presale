@@ -322,10 +322,10 @@ export default function Landing_page({ setRaise }) {
                       </p>
                     </span>
                   </h5>
-                  <h4>
+                  <h6>
                     Welcome to BitWDN, a cutting-edge platform designed to integrate the best of decentralized finance (DeFi), digital collectibles, and immersive gaming experiences. Our project combines a decentralized exchange (DEX), a unique NFT collection, a secure wallet, and an engaging Web3 game to offer a comprehensive and innovative blockchain ecosystem
 
-                  </h4>                </div>
+                  </h6>                </div>
               </div>
               <div className="col-lg-6 flex justify-content-end">
                 <div className="col-md-12 this_ha">

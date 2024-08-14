@@ -1,16 +1,10 @@
 .main_landing {
     padding: 10px 10px;
-    /* background-image: url('../Assets/bg5.png'); */
-    background-position: center;
-    background-color: #141414 ;
-    background-repeat: no-repeat;
-    background-size: 50%;
+   
     font-family: 'Inter', sans-serif;
 }
 
-.main_div_landing {
-    /* margin-top: 5rem; */
-}
+
 
 .main_div_Text {
     margin-top: 3rem;
