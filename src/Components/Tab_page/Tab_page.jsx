@@ -72,10 +72,10 @@ export default function Tab_page({Claimable}) {
 
 
   const webSupply = new Web3(
-    "wss://bsc-testnet-rpc.publicnode.com"
-    // "wss://bsc-testnet-rpc.publicnode.com"
+    "https://bsc-rpc.publicnode.com"
+    // "https://bsc-rpc.publicnode.com"
 
-    // wss://bsc-testnet-rpc.publicnode.com
+    // https://bsc-rpc.publicnode.com
   );
   const handleChange = (event, newValue) => {
     setValue(newValue);

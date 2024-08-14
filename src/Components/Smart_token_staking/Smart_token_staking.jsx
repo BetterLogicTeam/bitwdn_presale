@@ -31,7 +31,7 @@ export default function Smart_token_staking() {
   const [Claimable, setClaimable] = useState(0);
   const [yourStake, setyourStake] = useState(0)
 
-  const webSupply = new Web3("wss://bsc-testnet-rpc.publicnode.com");
+  const webSupply = new Web3("https://bsc-rpc.publicnode.com");
 
   const Stake_Token = async (days) => {
     try {

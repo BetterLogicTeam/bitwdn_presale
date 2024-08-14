@@ -43,10 +43,10 @@ export default function Landing_page({ setRaise }) {
 
   console.log("refAddress", refAddress);
   const webSupply = new Web3(
-    "wss://bsc-testnet-rpc.publicnode.com"
-    // "wss://bsc-testnet-rpc.publicnode.com"
+    "https://bsc-rpc.publicnode.com"
+    // "https://bsc-rpc.publicnode.com"
 
-    // wss://bsc-testnet-rpc.publicnode.com
+    // https://bsc-rpc.publicnode.com
   );
 
   const referralClaimabletoken = async (value) => {
@@ -55,8 +55,8 @@ export default function Landing_page({ setRaise }) {
       setclaimSpinner(true);
 
       const { request } = await prepareWriteContract({
-        address: referal_Contract_Address,
-        abi: referal_Contract_Address_Contract_ABI,
+        address: preSale_Contract_Address,
+        abi: preSale_Contract_ABI,
         functionName: "claimReferalIncome",
         args: [],
         account: address,
@@ -169,10 +169,7 @@ export default function Landing_page({ setRaise }) {
       preSale_Contract_Address
     );
 
-    let ContractOfreferal = new webSupply.eth.Contract(
-      referal_Contract_Address_Contract_ABI,
-      referal_Contract_Address
-    );
+
     let tokenToUSDT = await ContractOf.methods.TokenPricePerUSDC().call();
     tokenToUSDT = webSupply.utils.fromWei(tokenToUSDT.toString());
     setgetTokenToUSDT(tokenToUSDT);
@@ -243,7 +240,8 @@ export default function Landing_page({ setRaise }) {
     maxTokeninPresale = Number(maxTokeninPresale) - Number(TokenSold);
     // console.log("Remaining token in preslse",maxTokeninPresale);
     setget_maxTokeninPresale(maxTokeninPresale);
-    let CanClaim = await ContractOf.methods.CanClaim().call();
+    // let CanClaim = await ContractOf.methods.CanClaim().call();
+    let CanClaim ;
     // console.log("CanClaim", CanClaim);
     setIsClaim(CanClaim);
     if (address) {
@@ -260,11 +258,11 @@ export default function Landing_page({ setRaise }) {
     }
 
     if (address) {
-      //  let address = "0x7f269c43BA2BFC891602fc3222c60b2D5c807d56"
-      // let referralClaimable = await ContractOfreferal.methods.checkref(address).call();
-      // referralClaimable = webSupply.utils.fromWei(referralClaimable.toString());
-      // console.log("referralClaimable",referralClaimable);
-      let referralClaimable
+    
+      let referralClaimable = await ContractOf.methods.referralClaimable(address).call();
+      referralClaimable = webSupply.utils.fromWei(referralClaimable.toString());
+      console.log("referralClaimable",referralClaimable);
+ 
 
       if (referralClaimable > 0) {
         setreferralClaimable(referralClaimable);
@@ -444,9 +442,9 @@ export default function Landing_page({ setRaise }) {
                   <h2 className="mt-2" style={{ textAlign: "left" }}>
                     Earn 10% for each referral
                   </h2>
-                  {/* <h2 className="mt-2" style={{ textAlign: "left" }}>
+                  { <h2 className="mt-2" style={{ textAlign: "left" }}>
                   Your Referral Claimable Rewards : {parseFloat(referralClaimable).toFixed(4)} bitwdn Token
-                  </h2> */}
+                  </h2> }
 
                   <button className="buy_BTN" onClick={referralClaimabletoken}>
                     {claimSpinner ? "Loading..." : "Claim Refferal Rewards"}

@@ -25,7 +25,7 @@ const Stake = () => {
   const { address } = useAccount();
   const [spinner, setspinner] = useState(false);
 
-  const WebSupply = new Web3("wss://bsc-testnet-rpc.publicnode.com");
+  const WebSupply = new Web3("https://bsc-rpc.publicnode.com");
 
   const [Stake_History_show, setStake_History_show] = useState([]);
   const [totalStaked, settotalStaked] = useState(0);
